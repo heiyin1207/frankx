@@ -11,6 +11,7 @@ option(BUILD_EXAMPLES "Build example programs" ON)
 option(BUILD_PYTHON_MODULE "Build python module" ON)
 option(BUILD_TESTS "Build tests" ON)
 option(USE_PYTHON_EXTENSION "Use python in frankx library" ON)
+add_subdirectory(extern/pybind11)
 
 
 find_package(Eigen3 3.3.7 REQUIRED NO_MODULE)
@@ -18,7 +19,8 @@ find_package(Franka 0.8 REQUIRED)
 
 message("Found Eigen Version: ${Eigen3_VERSION}")
 message("Found Franka Version: ${Franka_VERSION}")
-
+message("Found pybind11 Version: ${pybind11_VERSION}")
+message("pybind11_INCLUDE_DIRS: ${pybind11_INCLUDE_DIRS}")
 
 add_subdirectory(affx)
 add_subdirectory(ruckig)
